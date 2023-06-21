@@ -12,8 +12,16 @@ import random
 
 # criar um rand entre um intervalo considerável pode ser uma boa ideia
 
-tamanhos = [10, 100, 1000]  
-num_execucoes = 5  
+rand_tamanho = random.randint(2, 10)
+aux_tamanhos = rand_tamanho
+
+tamanhos = []
+
+for aux in range(aux_tamanhos):
+    tamanhos.append(random.randint(1, 10000))
+
+rand_num_execucoes = random.randint(1, 10)
+num_execucoes = rand_num_execucoes
 
 for tamanho in tamanhos:
     tempos_execucao = []
