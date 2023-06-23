@@ -4,10 +4,10 @@ from arquivos.teste_iterativo import linha_de_montagem
 from arquivos.grafico import grafico_da_entrada, grafico_da_saida
 
 def comparacoes():
-    estacoes = random.randint(1, 10) # foi diminuido para que o gráfico visualizável de maneira adequada
+    estacoes = random.randint(1, 10) # foi diminuido para que o gráfico fique visualizável de maneira adequada
 
     tamanho = random.randint(1, 1000)
-    num_execucoes = random.randint(1, 5) # foi diminuido para que o gráfico visualizável de maneira adequada
+    num_execucoes = random.randint(1, 5) # foi diminuido para que o gráfico fique visualizável de maneira adequada
 
     # lista que vão ser inseridas no gráfico
     tamanho_entrada_guloso = []
@@ -19,6 +19,7 @@ def comparacoes():
     media_tempo_execucao_guloso = []
     media_tempo_execucao_iterativo = []
 
+    #loop efetuado pelo número de execuções
     for i in range(num_execucoes):
         tempos_execucao_guloso = []
         tempos_execucao_iterativo = []
@@ -27,7 +28,7 @@ def comparacoes():
 
         trocas = [[random.randint(1, 100) for rep in range(estacoes)] for r in range(2)]
         
-        entrada1 = [random.randint(1, tamanho) for r in range(2)]
+        entrada1 = [random.randint(1, tamanho) for r in range(2)] # o tamanho é o valor máximo que a variável pode receber
         tamanho_entrada_guloso.append(entrada1)
         
         entrada2 = [random.randint(1, tamanho) for r in range(2)]
