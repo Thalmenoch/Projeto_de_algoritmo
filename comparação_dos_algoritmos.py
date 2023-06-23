@@ -29,9 +29,9 @@ for execs in num_execucoes:
 
     trocas = [[random.randint(1, 1000) for rep in range(repeticoes)] for r in range(2)]
         
-    entrada = [random.randint(1,100) for r in range(repeticoes)]
+    entrada = [random.randint(1,100) for r in range(2)]
     
-    saida = [random.randint(1,100) for r in range(repeticoes)]
+    saida = [random.randint(1,100) for r in range(2)]
 
     for repeticoes in range(execs):
 
