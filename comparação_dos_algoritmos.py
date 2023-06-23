@@ -12,8 +12,8 @@ from teste_iterativo import linha_de_montagem
 
 # criar um rand entre um intervalo considerável pode ser uma boa ideia
 
-repeticoes = random.randint(1, 10)
-
+estacoes = random.randint(1, 100)
+tamanho = random.randint(1, 1000)
 
 num_execucoes = [random.randint(1, 10) for r in range(2)]
 print()
@@ -25,21 +25,23 @@ for execs in num_execucoes:
     tempos_execucao_guloso = []
     tempos_execucao_iterativo = []
     
-    tempo = [[random.randint(1, 1000) for rep in range(repeticoes)] for r in range(2)]
+    tempo = [[random.randint(1, tamanho) for rep in range(estacoes)] for r in range(2)]
 
-    trocas = [[random.randint(1, 1000) for rep in range(repeticoes)] for r in range(2)]
-        
-    entrada = [random.randint(1,100) for r in range(2)]
+    trocas = [[random.randint(1, tamanho) for rep in range(estacoes)] for r in range(2)]
+     
+    entrada1 = [random.randint(1,100) for r in range(2)]
+    entrada2 = [random.randint(1,100) for r in range(2)]
     
-    saida = [random.randint(1,100) for r in range(2)]
+    saida1 = [random.randint(1,100) for r in range(2)]
+    saida2 = [random.randint(1,100) for r in range(2)]
 
     for repeticoes in range(execs):
 
-        tempo_min_guloso, caminho_guloso = linha_de_montagem_guloso(tempo, trocas, entrada, saida)
+        tempo_min_guloso, caminho_guloso = linha_de_montagem_guloso(tempo, trocas, entrada1, saida1)
         
         tempos_execucao_guloso.append(tempo_min_guloso)
 
-        tempo_min_iterativo, caminho_otimo = linha_de_montagem(tempo, trocas, entrada, saida)
+        tempo_min_iterativo, caminho_otimo = linha_de_montagem(tempo, trocas, entrada2, saida2)
         
         tempos_execucao_iterativo.append(tempo_min_iterativo)
 
@@ -56,5 +58,5 @@ for execs in num_execucoes:
 media_guloso = sum(media_tempo_execucao_guloso) / len(media_tempo_execucao_guloso)
 media_iterativo = sum(media_tempo_execucao_iterativo) / len(media_tempo_execucao_iterativo)
 
-print(f"Média do tempo de execução {media_guloso:.2f} segundos")
-print(f"Média do tempo de execução {media_iterativo:.2f} segundos")
+print(f"Média do tempo de execução guloso {media_guloso:.2f} segundos")
+print(f"Média do tempo de execução iterativo {media_iterativo:.2f} segundos")
