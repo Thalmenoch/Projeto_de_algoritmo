@@ -12,10 +12,10 @@ from teste_iterativo import linha_de_montagem
 
 # criar um rand entre um intervalo considerável pode ser uma boa ideia
 
-repeticoes1 = random.randint(1, 20)
-repeticoes2 = random.randint(1, 15)
+repeticoes = random.randint(1, 10)
 
-num_execucoes = [random.randint(1, 100) for r in range(repeticoes1)]
+
+num_execucoes = [random.randint(1, 10) for r in range(2)]
 print()
 
 media_tempo_execucao_guloso = []
@@ -25,13 +25,13 @@ for execs in num_execucoes:
     tempos_execucao_guloso = []
     tempos_execucao_iterativo = []
     
-    tempo = [[random.randint(1, 10000) for rep in range(repeticoes2)] for r in range(repeticoes1)]
+    tempo = [[random.randint(1, 1000) for rep in range(repeticoes)] for r in range(2)]
 
-    trocas = [[random.randint(1, 10000) for rep in range(repeticoes2)] for r in range(repeticoes1)]
+    trocas = [[random.randint(1, 1000) for rep in range(repeticoes)] for r in range(2)]
         
-    entrada = [random.randint(1,10) for r in range(repeticoes1)]
+    entrada = [random.randint(1,100) for r in range(repeticoes)]
     
-    saida = [random.randint(1,10) for r in range(repeticoes1)]
+    saida = [random.randint(1,100) for r in range(repeticoes)]
 
     for repeticoes in range(execs):
 
