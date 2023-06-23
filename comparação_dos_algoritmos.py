@@ -15,7 +15,7 @@ from teste_iterativo import linha_de_montagem
 repeticoes = random.randint(1, 10)
 
 
-num_execucoes = [random.randint(1, 10) for r in range(2)]
+num_execucoes = [random.randint(1, 10) for r in range(3)]
 print()
 
 media_tempo_execucao_guloso = []
@@ -29,9 +29,9 @@ for execs in num_execucoes:
 
     trocas = [[random.randint(1, 1000) for rep in range(repeticoes)] for r in range(2)]
         
-    entrada = [random.randint(1,100) for r in range(repeticoes)]
+    entrada = [random.randint(1,100) for r in range(2)]
     
-    saida = [random.randint(1,100) for r in range(repeticoes)]
+    saida = [random.randint(1,100) for r in range(2)]
 
     for repeticoes in range(execs):
 
